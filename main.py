@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=headers,
 )
 
-learn = load_learner("https://github.com/adityamaanas/trash-classification/blob/main/export.pkl")
+learn = load_learner("https://raw.githubusercontent.com/adityamaanas/trash-classification/main/export.pkl")
 
 
 @app.get("/")
