@@ -8,14 +8,14 @@ img_url = 'https://ultralytics.com/images/bus.jpg'
 
 # Define a function to return the coordinates of the segments
 def get_masks(model, img_url):
-    results = model.predict(img_url, save=True)
+    results = model.predict(img_url)
     for result in results:
         boxes = result.boxes  # Boxes object for bbox outputs
         masks = result.masks  # Masks object for segmentation masks outputs
         
-    print(type(masks))
+    print(type(masks)) # type: ignore
 
-    return masks
+    return masks # type: ignore
 
 # region test
 #img_url = 'https://ultralytics.com/images/bus.jpg'
