@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from uvicorn import run
-from fastai.vision.all import *
+from fastai.vision.all import * # type: ignore
 import skimage
 from urllib.request import urlopen
 import os
