@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=headers,
 )
 
-learn = load_learner("C:/Users/adipi/Documents/Code/Internship-RAKRIC-0723/Original/export.pkl")
+learn = load_learner("C:/Users/adipi/Documents/Code/Internship-RAKRIC-0723/trash-classification/export.pkl")
 
 
 @app.get("/")
