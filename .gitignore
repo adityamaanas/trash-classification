@@ -163,3 +163,4 @@ cython_debug/
 # Other folders
 
 yolov8n.pt
+yolov8n-seg.pt
