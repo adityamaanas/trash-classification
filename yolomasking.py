@@ -2,9 +2,9 @@ from ultralytics import YOLO
 import cv2
 
 # Load a model
-model = YOLO('yolov8n-seg.pt')  # load an official model
+#model = YOLO('yolov8n-seg.pt')  # load an official model
 
-img_url = 'https://ultralytics.com/images/bus.jpg'
+#img_url = 'https://ultralytics.com/images/bus.jpg'
 
 # Define a function to return the coordinates of the segments
 def get_masks(model, img_url):
