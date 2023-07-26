@@ -37,3 +37,5 @@ async def get_net_image_prediction(image_link: str = ""):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     run(app)
+
+#python -m uvicorn main:app --reload

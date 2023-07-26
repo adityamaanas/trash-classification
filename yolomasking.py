@@ -10,10 +10,9 @@ import cv2
 def get_masks(model, img_url):
     results = model.predict(img_url)
     for result in results:
-        boxes = result.boxes  # Boxes object for bbox outputs
         masks = result.masks  # Masks object for segmentation masks outputs
         
-    print(type(masks)) # type: ignore
+    #print(type(masks)) # type: ignore
 
     return masks # type: ignore
 
