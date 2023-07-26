@@ -16,6 +16,13 @@ def get_masks(model, img_url):
 
     return masks # type: ignore
 
+def get_box(model, img_url):
+    results = model.predict(img_url)
+    for result in results:
+        boxes = result.boxes
+
+    return boxes # type: ignore
+
 # region test
 #img_url = 'https://ultralytics.com/images/bus.jpg'
 #img = cv2.imread(img_url)
