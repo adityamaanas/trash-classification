@@ -6,12 +6,12 @@ from fastai.vision.all import * # type: ignore
 
 model = YOLO('yolov8n-seg.pt')
 
-def crop(img_url, img):
+def crop(img_url):
     cropped = []
     boxes = get_box(model, img_url)
     boxes = boxes.xyxy
-    #img = PILImage.create(urlopen(img_url))
-    #img = np.array(img)
+    img = PILImage.create(urlopen(img_url))
+    img = np.array(img)
 
     # create separate images for each box
     for box in boxes:
