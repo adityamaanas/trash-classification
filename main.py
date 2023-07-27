@@ -5,6 +5,7 @@ from fastai.vision.all import * # type: ignore
 import skimage
 from urllib.request import urlopen
 import os
+import croppingbox
 
 app = FastAPI()
 
@@ -32,8 +33,17 @@ async def root():
 async def get_net_image_prediction(image_link: str = ""):
     if image_link == "":
         return {"message": "No image link provided"}
-    pred, idx, prob = learn.predict(PILImage.create(urlopen(image_link)))
-    return {"prediction": pred, "probability": float(prob[0])}
+    
+    cropped = croppingbox.crop(image_link)
+    predictions = []
+    # Predict for each cropped image
+    for i in range(len(cropped)):
+        pred, idx, prob = learn.predict(cropped[i])
+        predictions.append({"prediction": pred})
+        #predictions.append({"prediction": pred, "probability": float(prob[0])})
+        
+    return predictions
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     run(app)
